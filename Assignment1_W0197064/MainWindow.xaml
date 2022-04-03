@@ -1,0 +1,81 @@
+﻿<Window x:Class="Assignment1_W0197064.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment1_W0197064"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460" Width="750" Background="#FF949494">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open"  
+                        CanExecute="Open_CanExecute" 
+                        Executed="Open_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Save"
+                        CanExecute="Save_CanExecute"
+                        Executed="Save_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Close"
+                        CanExecute="Exit_CanExecute"
+                        Executed="Exit_Executed"/>
+        <CommandBinding Command="MediaCommands.Play"
+                        CanExecute="PlayButton_CanExecute"
+                        Executed="PlayButton_Executed"/>
+        <CommandBinding Command="MediaCommands.Pause"
+                        CanExecute="PauseButton_CanExecute"
+                        Executed="PauseButton_Executed"/>
+        <CommandBinding Command="MediaCommands.Stop"
+                        CanExecute="StopButton_CanExecute"
+                        Executed="StopButton_Executed"/>
+    </Window.CommandBindings>
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="500"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="352"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0, 0,0">
+            <Menu DockPanel.Dock="Top" Width="800">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open" 
+                              Command="ApplicationCommands.Open"/>
+                    <MenuItem Header="Save"
+                              Command="ApplicationCommands.Save"/>
+                    <Separator/>
+                    <MenuItem Header="Exit"
+                              Command="ApplicationCommands.Close"/>
+                </MenuItem>
+                <MenuItem Header="Playback">
+                    <MenuItem Header="Play"
+                              Command="MediaCommands.Play"/>
+                    <MenuItem Header="Pause"
+                              Command="MediaCommands.Pause"/>
+                    <MenuItem Header="Stop"
+                              Command="MediaCommands.Stop"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Image x:Name="AlbumImageBlock"
+               Grid.Row="1" 
+               Grid.Column="1" 
+               Visibility="Hidden"
+               HorizontalAlignment="Stretch"/>
+        <local:AudioPlayer x:Name="MainAudioPlayer"
+                           Grid.Row="3" 
+                           Grid.Column="1" 
+                           Margin="70,0,0,0" 
+                           Grid.RowSpan="2"
+                           Visibility="Hidden"
+                           HorizontalAlignment="Right"/>
+        <local:TagEditor x:Name="MainTagEditor"
+                         Grid.Row="1" 
+                         Grid.Column="0" 
+                         Grid.RowSpan="2"
+                         Visibility="Hidden"/>
+    </Grid>
+</Window>

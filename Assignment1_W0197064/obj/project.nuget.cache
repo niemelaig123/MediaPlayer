@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "P2XVTBwI+952zk1fBGn9HQBmTUB1JtgDUzuT3kjg09jh2rRqtuj+Hc6h7rsracxAzUWSxBAuOECiAwDiws3hVw==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\NSCC\\Year2\\sem2\\PROG2500_WindowsProgramming\\Assignments\\Assignment1_W0197064\\Assignment1_W0197064\\Assignment1_W0197064.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nieme\\.nuget\\packages\\taglibsharp\\2.2.0\\taglibsharp.2.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
